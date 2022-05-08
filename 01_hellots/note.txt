@@ -1,0 +1,2 @@
+npm i typescript -g
+tsc 1_hello.ts
