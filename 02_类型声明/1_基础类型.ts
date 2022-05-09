@@ -46,6 +46,8 @@ let gender: 'male' | 'female'
 declare function create(o: object | null): void
 create({ prop: 0 }) // OK
 create(null) // OK
+let obj: { name: string; age?: number } // ? 标识可选
+let obj2: { name: string; [propName: string]: any }
 // 类型断言
 let someValue: any = 'this is a string'
 let strLength: number = (<string>someValue).length
@@ -58,3 +60,10 @@ let cUnknow: unknown
 // c = cUnknow  unknow类型不可以直接赋值给其他类型
 c = <Color>cUnknow
 c = cUnknow as Color
+
+// 函数
+let fun1: (a: number, b: number) => number
+
+// 类型别名
+type MyType = 1 | 2 | 3
+let my1: MyType
